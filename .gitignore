@@ -1,0 +1,8 @@
+
+*.cnf
+*.pem
+dbdata/ib_buffer_pool
+dbdata/ib_logfile0
+dbdata/ib_logfile1
+dbdata/ibdata1
+dbdata/ibtmp1

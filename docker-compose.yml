@@ -1,0 +1,15 @@
+version '3.3'
+
+services:
+  dbportal:
+    image: mysql:5.7
+    volumes:
+      - ./dbdata:/var/lib/mysql
+    ports:
+      -"3310:3306"
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: dbpass
+      MYSQL_DATABASE: public-portal
+      MYSQL_USER: portaluser
+      MYSQL_PASSWORD: admin

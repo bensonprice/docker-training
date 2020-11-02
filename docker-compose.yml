@@ -1,4 +1,4 @@
-version '3.3'
+version: '3.3'
 
 services:
   dbportal:
@@ -6,8 +6,8 @@ services:
     volumes:
       - ./dbdata:/var/lib/mysql
     ports:
-      -"3310:3306"
-    container_name: mysql
+      - "3316:3306"
+    container_name: train-mysql
     environment:
       MYSQL_ROOT_PASSWORD: dbpass
       MYSQL_DATABASE: public-portal

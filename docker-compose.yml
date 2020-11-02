@@ -5,6 +5,7 @@ services:
     image: mysql:5.7
     volumes:
       - ./dbdata:/var/lib/mysql
+    restart: always               
     ports:
       - "3316:3306"
     container_name: train-mysql
@@ -13,3 +14,14 @@ services:
       MYSQL_DATABASE: public-portal
       MYSQL_USER: portaluser
       MYSQL_PASSWORD: admin
+  php-apache:
+    depends_on:
+      - dbportal
+    build: .
+    volumes:
+      - /mnt/c/train/public-portal-master:/var/www/html/public-portal:delegated
+      - ./default:/var/www/html/public-portal/sites/default:delegated
+    ports:
+      - "8080:80"
+    container_name: train-public-portal
+    restart: always
